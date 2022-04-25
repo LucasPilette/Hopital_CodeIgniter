@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.greenEffect{
+    color: #84B905;
+}
+
+table{
+    min-width: 70%;
+    margin: 20px 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0;
+    background-color: #0084a5;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    filter: invert(80%) sepia(47%) saturate(5639%) hue-rotate(37deg) brightness(96%) contrast(96%);
+}
+
+.logo>img{
+    height: 8vh;
+}
+
+.title{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+th{
+    background-color: #006683;
+    color: #f1faee;
+}
+
+td{
+    background-color: #bbf0ff;
+    padding: 5px 3px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.activeCase{
+    background-color: #84B905;
+    color: white;
+    font-weight: bold;
+}
+
+.delete{
+    background-color: #c13826;
+    color: white;
+}
+
+.cardUser{
+    width: 50%;
+    font-size: 1.5rem;
+    background-color: #98e2f6;
+    min-height:300px;
+    padding: 20px 20px;
+    line-height: 150%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.elemCard{
+    color: #84B905;
+}
+
+.modifyPatient{
+    margin-top: 50px;
+    text-align: center;
+    background-color: #84B905;
+    border-radius: 5px;
+    transition: 200ms ease;
+}
+
+.modifyPatient:hover{
+    background-color: #93c126;
+    color: white;
+}
+
+.pictureCard{
+    display: flex;
+    justify-content: center;
+}
+
+.pictureCard>img{
+    width: 80%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
