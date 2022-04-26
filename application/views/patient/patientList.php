@@ -15,7 +15,7 @@
 			<?php foreach ($patient as $patient_item): ?>
 			<tr>
 				<td><?=$patient_item['id']; ?></td>
-				<td><?=date('j/m/Y', strtotime($patient_item['birthdate']))?></td>
+				<td><?=date('j M Y', strtotime($patient_item['birthdate']))?></td>
 				<td><?=$patient_item['lastname']; ?></td>
 				<td><?=$patient_item['firstname']; ?></td>
 				<td><a href="mailto:<?=$patient_item['mail']?>"><?=$patient_item['mail']; ?></a></td>

@@ -11,7 +11,7 @@
 			</div>
 			<div>
 				<p><span class="elemCard">Date de naissance :
-					</span><?=date('j/m/Y', strtotime($patient_item['birthdate']))?> </p>
+					</span><?=date('j M Y', strtotime($patient_item['birthdate']))?> </p>
 			</div>
 			<div>
 				<p><span class="elemCard">Numéro de téléphone :</span><?=$patient_item['phone']?> </p>
@@ -25,4 +25,5 @@
 			<img src="<?=src_url('User-icon')?>" alt="">
 		</div>
 	</div>
+	<a href="<?=site_url('/patient'); ?>">Retour à la liste de patients</a>
 </div>

@@ -1,5 +1,6 @@
 <?php
-class Patient extends CI_Controller {
+class Patient extends CI_Controller
+{
 
         public function __construct()
         {
@@ -10,28 +11,51 @@ class Patient extends CI_Controller {
         }
 
         public function index()
-{
-        $data['patient'] = $this->patient_model->get_patient();
-        $data['title'] = 'Liste de patient';
-        $data['id'] = $_GET['id'] ?? '';
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('patient/patientList', $data);
-        $this->load->view('templates/footer');
-}
-public function view($slug = NULL)
-{
-        $data['patient_item'] = $this->patient_model->get_patient($slug);
-        $data['title'] = $data['patient_item']['id'];
-        if (empty($data['patient_item']))
         {
-                show_404();
+                $data['patient'] = $this->patient_model->get_patient();
+                $data['title'] = 'Liste de patient';
+                $data['id'] = $_GET['id'] ?? '';
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('patient/patientList', $data);
+                $this->load->view('templates/footer');
+        }
+        public function view($slug = NULL)
+        {
+                $data['patient_item'] = $this->patient_model->get_patient($slug);
+                // $data['title'] = $data['patient_item']['id'];
+                if (empty($data['patient_item'])) {
+                        show_404();
+                }
+
+                $data['id'] = $data['patient_item']['id'];
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('patient/view', $data);
+                $this->load->view('templates/footer');
         }
 
-        $data['id'] = $data['patient_item']['id'];
+        public function create()
+        {       
+                $this->load->helper('form');
+                $this->load->library('form_validation');
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('patient/view', $data);
-        $this->load->view('templates/footer');
-}
+                $data['title'] = 'Ajouter un patient';
+
+                $this->form_validation->set_rules('lastname', 'lastname', 'required');
+                $this->form_validation->set_rules('firstname', 'firstname', 'required');
+                $this->form_validation->set_rules('birthdate', 'birthdate', 'required');
+                $this->form_validation->set_rules('mail', 'mail', 'required');
+                $this->form_validation->set_rules('phone', 'phone', 'required');
+                if ($this->form_validation->run() === FALSE) {
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('patient/createPatient');
+                        $this->load->view('templates/footer');
+                } else {
+                        $this->patient_model->createPatient();
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('patient/index.php');
+                        $this->load->view('templates/footer');
+                }
+        }
 }

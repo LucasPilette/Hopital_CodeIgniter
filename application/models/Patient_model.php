@@ -17,4 +17,21 @@ class Patient_model extends CI_Model {
         $query = $this->db->get_where('patients', array('id' => $slug));
         return $query->row_array();
 }
+
+public function createPatient()
+{
+        $this->load->helper('url');
+
+        // $slug = url_title($this->input->post('title'), 'dash', TRUE);
+
+        $data = array(
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'birthdate' => $this->input->post('birthdate'),
+                'mail' => $this->input->post('mail'),
+                'phone' => $this->input->post('phone')
+        );
+
+        return $this->db->insert('patients', $data);
+}
 }

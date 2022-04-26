@@ -17,3 +17,6 @@
                                 <img src="<?=src_url('logo')?>" alt="Logo Hôpital">
                         </div>
                 </header>
+                <div class="underHeader">
+
+                </div>

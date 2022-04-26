@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+}
+
+
+body{
+    background-color: #ccf5ff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 .greenEffect{
@@ -15,9 +24,16 @@ table{
 header{
     display: flex;
     justify-content: space-around;
-    padding: 2% 0;
     background-color: #0084a5;
+    color: #f1faee;
+    height: 10vh;
 }
+
+.underHeader{
+    height: 7vh;
+    background-color: #006683;
+}
+
 
 .logo{
     display: flex;
@@ -105,6 +121,29 @@ a{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.formDiv{
+    width: 60%;
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.inputDiv>*{
+    padding: 1vh 0;
+}
+
+.submit{
+    font-size: 1.5rem;
+    color: #f1faee;
+    background-color: #006683;
+    border-radius: 5px;
+    border: none;
 }
 
 footer{
