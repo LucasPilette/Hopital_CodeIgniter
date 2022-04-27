@@ -12,3 +12,9 @@ if(!function_exists('src_url')){
         return base_url().'assets/src/'.$name.'.png';
     }
 }
+
+if(!function_exists('config_url')){
+    function config_url($name){
+        return base_url().'application/config/'.$name.'.php';
+    }
+}

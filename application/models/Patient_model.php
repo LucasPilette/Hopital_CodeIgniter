@@ -22,7 +22,6 @@ public function createPatient()
 {
         $this->load->helper('url');
 
-        // $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
                 'firstname' => $this->input->post('firstname'),
@@ -31,6 +30,7 @@ public function createPatient()
                 'mail' => $this->input->post('mail'),
                 'phone' => $this->input->post('phone')
         );
+        
 
         return $this->db->insert('patients', $data);
 }
