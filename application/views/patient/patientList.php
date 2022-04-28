@@ -1,4 +1,5 @@
 <h2><?php echo $title; ?></h2>
+<a href="/patient/create">Ajouter un patient</a>
 <div class="container">
 	<table>
 		<thead>

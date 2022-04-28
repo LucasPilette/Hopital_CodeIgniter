@@ -34,4 +34,21 @@ public function createPatient()
 
         return $this->db->insert('patients', $data);
 }
+
+public function modifyPatient($id)
+{
+        $this->load->helper('url');
+
+
+        $data = array(
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'birthdate' => $this->input->post('birthdate'),
+                'mail' => $this->input->post('mail'),
+                'phone' => $this->input->post('phone')
+        );
+        
+        $this->db->where('id', $id);
+        return $this->db->update('patients', $data);
+}
 }

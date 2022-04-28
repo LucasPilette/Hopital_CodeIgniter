@@ -1,7 +1,6 @@
 <div class="container" id="profile">
 <h2>Profil de <?=$patient_item['firstname'].' '.$patient_item['lastname']?></h2>
 	<div class="cardUser">
-
 		<div class="textCard">
 			<div>
 				<p><span class="elemCard">Prénom : </span> <?=$patient_item['firstname']?></p>
@@ -19,7 +18,7 @@
 			<div>
 				<p><span class="elemCard">Mail :</span><?=$patient_item['mail']?> </p>
 			</div>
-			<div class="modifyPatient"> <a href="">Modifier le profil</a></div>
+			<div class="modifyPatient"> <a href="/patient/modifyPatient?id=<?=$patient_item['id']?>">Modifier le profil</a></div>
 		</div>
 		<div class="pictureCard">
 			<img src="<?=src_url('User-icon')?>" alt="">
