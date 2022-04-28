@@ -34,6 +34,7 @@ $dataForm = array(
 		<div class="inputDiv">
 			<label for="patient">Patient</label>
 			<select name="patient" id="">
+				<option value="" selected disabled>Veuillez choisir un patient</option>
 				<?php foreach($patient as $key => $value){?>
 				<option value="<?=$value['id']?>"><?=$value['firstname'].' '.$value['lastname']?></option>
 				<?php } ?>

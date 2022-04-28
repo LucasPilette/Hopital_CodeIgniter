@@ -23,7 +23,9 @@ class Patient extends CI_Controller
         }
         public function view($slug = NULL)
         {
+                $this->load->model('appointment_model');
                 $data['patient_item'] = $this->patient_model->get_patient($slug);
+                $data['appointments'] = $this->appointment_model->get_appointment_by_ID($slug);
                 // $data['title'] = $data['patient_item']['id'];
                 if (empty($data['patient_item'])) {
                         show_404();

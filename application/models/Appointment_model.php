@@ -18,6 +18,14 @@ class Appointment_model extends CI_Model {
         return $query->row_array();
 }
 
+public function get_appointment_by_ID($id = 0)
+{
+
+        $query = $this->db->get_where('appointments', array('idPatients' => $id));
+        return $query->result_array();
+}
+
+
 public function createAppointment()
 {
         $this->load->helper('url');
